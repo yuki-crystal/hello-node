@@ -1,0 +1,62 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>XHR</title>
+  </head>
+  <body>
+    <button id="syncBtn">同步</button>
+    <button id="asyncBtn">非同步</button>
+    <button id="countBtn">測試按鈕</button>
+    <div id="count">0</div>
+    <div id="response">準備要顯示訊息</div>
+
+    <script>
+      var response = document.getElementById("response");
+      var syncBtn = document.getElementById("syncBtn");
+      syncBtn.addEventListener("click", function () {
+        // 同步的測試
+        response.innerHTML = "開始同步請求";
+        var xhr = new XMLHttpRequest();
+        // 準備了當請求回覆後要做的事
+        xhr.onload = function () {
+          if (this.status === 200) {
+            response.innerHTML = `非同步請求的結果: ${this.responseText}`;
+          } else {
+            response.innerHTML = `非同步請求的結果: ${this.status}`;
+          }
+        };
+        // get, post, put, patch, delete,...
+        // open("方法", "請求的網址", "非同步")
+        xhr.open("GET", "http://34.212.74.243:3000/", false);
+        // 真正地開始發出請求
+        xhr.send();
+      });
+
+      var asyncBtn = document.getElementById("asyncBtn");
+      asyncBtn.addEventListener("click", function () {
+        // 非同步的測試
+        response.innerHTML = "開始同步請求";
+        var xhr = new XMLHttpRequest();
+        // 準備了當請求回覆後要做的事
+        xhr.onload = function () {
+          if (this.status === 200) {
+            response.innerHTML = `非同步請求的結果: ${this.responseText}`;
+          } else {
+            response.innerHTML = `非同步請求的結果: ${this.status}`;
+          }
+        };
+        // get, post, put, patch, delete,...
+        // open("方法", "請求的網址", "非同步")
+        xhr.open("GET", "http://34.212.74.243:3000/", true);
+        // 真正地開始發出請求
+        xhr.send();
+      });
+
+      var countBtn = document.getElementById("countBtn");
+      var count = document.getElementById("count");
+      countBtn.addEventListener("click", function () {
+        count.innerHTML = parseInt(count.innerHTML, 10) + 1;
+      });
+    </script>
+  </body>
+</html>
