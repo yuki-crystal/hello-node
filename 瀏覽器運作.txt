@@ -1,0 +1,38 @@
+                          HTTP Request
+               client   --------------->   sever
+               瀏覽器   <---------------    web server
+                           HTTP Response
+
+
+               mysql:detabase server
+               phpmyadmin   request
+                client   ------------->   detabase server (mysql)
+                         <--------------
+                          response
+
+                          req          req
+                瀏覽器  ------->專案 -------> DB
+                        <-----      <-------
+                          res         res
+                
+                建立網路連線    ->  連線建立成功    ->  開始傳輸req
+                server回覆你 res -> 中斷連線
+
+                HTTP連線
+                
+
+                webpack ->合併、壓縮、移除所有的console.log
+
+                7*3=21
+                address =>a =>3
+
+                let a ="OOXX";
+                if(a=="OOXX"){
+                  console.log(a);
+                }
+
+                用短字母取代變數名稱、移除所有的空白跟換行
+
+                開發程式  一堆 js 檔 -------------->app.min.js
+
+                grunt,gulp,webpack

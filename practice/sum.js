@@ -40,3 +40,14 @@ console.timeEnd("SUM2");
 // O(1) < O(n) < O(n^2)
 
 // reduce 可以寫出 1 + ... + n
+function sum(param) {
+  let j = 0;
+  for (i = 1; i <= param; i++) {
+    j = i + j;
+  }
+  return j;
+}
+
+console.log(sum(3));
+console.log(sum(6));
+console.log(sum(10));
